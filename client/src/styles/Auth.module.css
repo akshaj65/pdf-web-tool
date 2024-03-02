@@ -1,0 +1,73 @@
+.invalidFeedback{
+    display: block;
+    margin-top:12px;
+    font-size: 16px;
+    color: #dc3545;
+}
+
+.cardContainer {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+}
+   
+  
+.profileImgCard {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; 
+ }
+   
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+ }
+.message {
+    margin-bottom: 16px;
+ }
+  
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formControl {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.loginBtn {
+    color: #fff;
+    background-color: #333;
+    border-color:#495057;
+    width: 100%;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.loginBtn:hover{
+    background-color: #35383a;
+}
+
+.textDanger{
+    color: #dc3545;
+}

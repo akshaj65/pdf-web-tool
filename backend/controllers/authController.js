@@ -71,7 +71,7 @@ export const logout = expressAsyncHandler( async ( req,res,next)=>{
         httpOnly:true
     };
 
-    res.cookie('token',null,options).json({
+    res.status(StatusCodes.OK).cookie('token',null,options).json({
         success:true,
         message:"Logged Out"
     })

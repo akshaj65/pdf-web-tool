@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//routers
 app.use('/api/v1/auth',authRouter);
 
 app.use(errorHandlerMiddleware);

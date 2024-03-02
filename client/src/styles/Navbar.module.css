@@ -1,0 +1,141 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+   }
+   
+   .navLogo {
+    font-size: 1.5rem;
+   }
+   
+   .navList {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+   }
+   
+   .navItem {
+    padding: 0.5rem;
+   }
+   
+   .navItem a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    height: 100%;
+    display: block;
+    padding: 12px;
+   }
+   .navItem a:hover {
+    color: #fff;
+    text-shadow: 0px 1px 1px white;
+}
+   
+   .navToggle {
+    display: none;
+    appearance: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: unset;
+    cursor: pointer;
+
+}
+   
+   .navIcon {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    display: block;
+    margin: 7px auto;
+   }
+   
+   .navIcon::before,
+   .navIcon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    left: 0;
+    transition: all 0.3s;
+   }
+   
+   .navIcon::before {
+    top: -6px;
+   }
+   
+   .navIcon::after {
+    top: 6px;
+   }
+   
+   .navListOpen {
+    display: block;
+   }
+   
+   .logoutBtn {
+    background-color: #f44336; 
+    border: none;
+    color: white; 
+    padding: 11px 16px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    border-radius: 4px;
+   }
+   
+   .logoutBtn:hover {
+    background-color: #d32f2f; 
+    font-weight: bold;
+   }
+
+   @media screen and (max-width: 768px) {
+    .navToggle {
+       display: block;
+    }
+    
+    .navItem{
+        padding: 25px 90px;
+    }
+    .navItem:hover{
+        background-color: #454545;
+    }
+   
+    .navList {
+       display: none;
+       position: absolute;
+       top: 46px;
+       right: 0;
+       background-color: #333;
+       width: 100%;
+       flex-direction: column;
+       gap: 1rem;
+       padding: 1rem;
+       height: calc( 100% - 46px);
+    }
+   
+    .navListOpen {
+       display: flex;
+    }
+
+    .navClose{
+        font-weight: normal;
+        color: #fff;
+        cursor: pointer;
+    }
+    .navClose:hover{
+        text-shadow: 0px 1px 2px #bdbdbd;
+    }
+
+    .navLogout:hover{
+        background-color: unset;
+    }
+   }
+   

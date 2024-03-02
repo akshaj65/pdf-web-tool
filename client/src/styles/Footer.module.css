@@ -1,0 +1,22 @@
+.footer{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.socialLink{
+    color: #fff;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.socialLink:hover{
+    color: #e4ff28;
+    text-decoration: underline;
+}
