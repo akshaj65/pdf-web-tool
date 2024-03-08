@@ -1,6 +1,5 @@
 import express from "express";
-import { loadMe, login, logout, register } from "../controllers/authController.js";
-import { getPdfFile, savePdfToUser,editPdfAndSend } from "../controllers/pdfController.js";
+import {  savePdfToUser, editPdfAndSend, downloadPdfFile } from "../controllers/pdfController.js";
 import isAuthenticatedUser from "../middlewares/authentication.js";
 import { singleUpload } from "../middlewares/multer.js";
 
@@ -8,11 +7,16 @@ const pdfRouter = express.Router();
 
 //authenticated access
 
+/**
+ * POST /pdf/upload - upload single pdf file
+ */
 pdfRouter.post('/upload', isAuthenticatedUser, singleUpload, savePdfToUser);
+/**
+ * GET  /pdf/:id   download
+ */
+pdfRouter.get('/download/:id', isAuthenticatedUser, downloadPdfFile);
 
-pdfRouter.get('/:id',isAuthenticatedUser,getPdfFile);
-
-pdfRouter.post('/edit/:id',isAuthenticatedUser,editPdfAndSend);
+pdfRouter.post('/edit/:id', isAuthenticatedUser, editPdfAndSend);
 
 
 export default pdfRouter;

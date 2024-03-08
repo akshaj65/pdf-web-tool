@@ -26,7 +26,7 @@ const PdfProvider = ({ children }) => {
 
     const downloadPdf = useCallback(async args => {
         try {
-            const res = await fetch(`${API_URL}/api/v1/pdf/${args.pdfId}`, {
+            const res = await fetch(`${API_URL}/api/v1/pdf/download/${args.pdfId}`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {

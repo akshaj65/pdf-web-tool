@@ -43,7 +43,7 @@ export const savePdfToUser = handleErrors(async (req, res, next) => {
 });
 
 
-export const getPdfFile = handleErrors(async (req, res, next) => {
+export const downloadPdfFile = handleErrors(async (req, res, next) => {
     try {
 
         const user = await getUser(req.user.id);
@@ -62,7 +62,10 @@ export const getPdfFile = handleErrors(async (req, res, next) => {
 
         res.download(fullFilePath, (err) => {
             if (err) {
-                return next(new CustomError.InternalServerError("Error While Downloading"));
+                if (err.code === 'ENOENT') {
+                    return next( new CustomError.NotFoundError('File not found!'));
+                }
+                return next(new CustomError.InternalServerError("Error While Downloading: " + err.message));
             }
         });
     } catch (error) {
