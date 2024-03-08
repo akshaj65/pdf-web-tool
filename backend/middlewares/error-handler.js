@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 
-const errorHandlerMiddleware = (err, req, res, next) => {
+export const errorHandlerMiddleware = (err, req, res, next) => {
     err.statusCode = err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
         err.message = err.message || "Internal Server Error";
 
@@ -31,14 +31,15 @@ const errorHandlerMiddleware = (err, req, res, next) => {
         err.message = `Json Web Token is Expired ,try again`;
         err.statusCode = StatusCodes.BAD_REQUEST;
     }
-    console.log(err);
 
     res.status(err.statusCode).json({
         success: false,
         message: err.message,
         // error: err.stack
 
-    })
-}
+    });
+};
 
-export default errorHandlerMiddleware;
+export const handleErrors =(func) =>(req, res, next) => {
+    Promise.resolve(func(req, res, next)).catch(next);
+}

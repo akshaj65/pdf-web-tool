@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import validator from "validator";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema({
         minlength: 6,
         select: false //when you search in using findone it will not show password with the output 
     },
+    pdfs:[{
+        pdfId: String,
+        fileName: String,
+    }]
 });
 
 //a pre hook that updates password before saving the document
