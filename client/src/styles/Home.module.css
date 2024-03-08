@@ -1,23 +1,52 @@
 .homeContainer{
 }
 
+.hero{
+    background: radial-gradient(circle at right, #B4C1F3, #DB899A);
+    background: -webkit-radial-gradient(circle at right, #B4C1F3, #DB899A);
+    background: -moz-radial-gradient(circle at right, #B4C1F3, #DB899A);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    padding: 34px;
+   
+}
+
+.header{
+    font-size: 32px;
+    font-family: roboto;
+}
+
 .uploadContainer{
     display: flex;
-    flex-direction:columns;
-    min-height: 230px;
-    align-items: center;
-    padding:15px;
-    margin: 20px 30px;
-    border-width: 2px;
-    border-radius: 2px;
-    border-color: #eeeeee;
-    border-style: dashed;
-    background-color: #f8e5e5;
-    color: #bdbdbd;
-    transition: border .3s ease-in-out;
-    box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  border-width: 2px;
+  border-radius: 2px;
+  border-color: #0b0a0a5c;
+  border-style: dashed;
+  background-color: #ffffff4d;
+  transition: border .3s ease-in-out;
+  box-sizing: border-box;
+  max-width: 1000px;
+  margin: 12px auto;
+  height: 100px;
+  text-align: center;
+  padding: 34px;
 }
 
 .chooseFile{
+    text-align: left;
+}
+.input{
+    word-wrap: break-word;
+}
 
+.pdfContainer{
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .input{
+        width: 100%;
+    }
 }

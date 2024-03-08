@@ -7,8 +7,6 @@ import { checkUserHasPdfId, getUser } from "../utils/userService.js";
 import { editAndUploadPdf, getPdf } from "../utils/pdfService.js";
 
 
-
-
 export const savePdfToUser = handleErrors(async (req, res, next) => {
     try {
         const pdfPath = req?.file?.path;

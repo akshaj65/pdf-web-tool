@@ -10,14 +10,6 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('isAuth') || false);
 
-    //check local storage when compnent mounts
-    // useEffect(() => {
-    //     const storedAuthStatus = localStorage.getItem('isAuth');
-    //     if (storedAuthStatus) {
-    //         setIsAuthenticated(JSON.parse(storedAuthStatus));
-    //     }
-    // }, []);
-
 
     // Update localStorage whenever isAuthenticated changes
     useEffect(() => {
@@ -112,7 +104,7 @@ const AuthProvider = ({ children }) => {
                 await swal({
                     text: message,
                     icon: "error"
-                });
+                }); 
             }
 
             setUser(user);

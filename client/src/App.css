@@ -6,8 +6,43 @@
 
 body{
   font-family: 'Poppins', sans-serif;
+  font-family:
+    Segoe UI,
+    Tahoma,
+    sans-serif;
 }
 
 h1, h2, h3, h5{
-  color: #0B2447;
+  color: #333;
+}
+
+.App{
+  margin: 91px 0;
+}
+
+.react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.react-pdf__Page {
+  max-width: 400px;
+  width: 90vw;
+  margin: 1em 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+.react-pdf__message {
+  padding: 20px;
+  color: rgb(0, 0, 0);
+}
+/* .react-pdf__Page__canvas {
+  margin: 0 auto; */
+  /* width: 80% !important; Adjust the width as needed */
+  /* height: 100% !important; Adjust the height as needed */
+/* } */
+
+@media screen and (max-width: 768px) {
+  .App{
+    margin: 61px 0;
+  }
 }

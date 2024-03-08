@@ -22,14 +22,14 @@ const Navbar = () => {
     }
     return (
         <nav className={styles.nav}>
-            <div className={styles.navLogo}>Logo</div>
+            <div className={styles.navLogo}> <Link className={styles.socialLink}to="https://github.com/akshaj65/pdf-web-tool/" target="_blank" rel="noopener noreferrer">Pdf-web-Tool</Link></div>
             <ul className={`${styles.navList} ${isOpen ? styles.navListOpen : ''}`}>
                 <li className={styles.navItem}>
                     <Link to="/" onClick={closeMenu} >Home</Link>
                 </li>
                 {!isAuthenticated && (
                     <>
-                         <li className={styles.navItem}>
+                        <li className={styles.navItem}>
                             <Link to="/login" onClick={closeMenu}>Login</Link>
                         </li>
                         <li className={styles.navItem}>
@@ -38,9 +38,14 @@ const Navbar = () => {
                     </>
                 )}
                 {isAuthenticated && (
-                    <li className={`${styles.navItem} ${styles.navLogout}`}>
-                        <button className={styles.logoutBtn} onClick={performLogout}>Logout</button>
-                    </li>
+                    <>
+                        <li className={styles.navItem}>
+                            <Link to="/user/files" onClick={closeMenu}>Saved Files</Link>
+                        </li >
+                        <li className={`${styles.navItem} ${styles.navLogout}`}>
+                            <button className={styles.logoutBtn} onClick={performLogout}>Logout</button>
+                        </li>
+                    </>
                 )}
             </ul>
             {!isOpen && (<button className={styles.navToggle} onClick={toggleMenu}> <span className={styles.navIcon}></span></button>)}

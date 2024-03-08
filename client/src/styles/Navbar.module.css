@@ -1,16 +1,25 @@
 .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background-color: #333;
     color: #fff;
+
    }
    
    .navLogo {
     font-size: 1.5rem;
    }
-   
+   .socialLink{
+    color: #fff;
+    text-decoration: none;
+    padding-left: 5px;
+}
    .navList {
     list-style: none;
     display: flex;
@@ -111,6 +120,7 @@
     .navList {
        display: none;
        position: absolute;
+       z-index: 1;
        top: 46px;
        right: 0;
        background-color: #333;
@@ -118,7 +128,7 @@
        flex-direction: column;
        gap: 1rem;
        padding: 1rem;
-       height: calc( 100% - 46px);
+       height: calc( 100vh - 46px);
     }
    
     .navListOpen {

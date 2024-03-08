@@ -9,25 +9,30 @@ import PageNotFound from './PageNotFound';
 
 import './App.css';
 import Register from './components/auth/Register';
+import PdfProvider from './providers/pdfProvider';
+import FileList from './components/FileList';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <AuthProvider>
-          <Routes>
-            <Route path="/" element={<PageLayout />}>
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
+          <PdfProvider>
+            <Routes>
+              <Route path="/" element={<PageLayout />}>
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
 
-              {/*Add routes that require authentication  */}
-              <Route element={<PrivateRoute />}>
-                <Route index element={<Home />} />
+                {/*Add routes that require authentication  */}
+                <Route element={<PrivateRoute />}>
+                  <Route index element={<Home />} />
+                  <Route path="user/files" element={<FileList />} />
+                </Route>
+
+                <Route path="*" element={<PageNotFound />} />
               </Route>
-
-              <Route path="*" element={<PageNotFound />} />
-            </Route>
-          </Routes>
+            </Routes>
+          </PdfProvider>
         </AuthProvider>
       </Router>
     </div>
